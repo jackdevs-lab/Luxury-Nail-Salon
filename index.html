@@ -627,7 +627,7 @@
             </div>
             
             <div class="border-t border-neutral-700 mt-12 pt-8 text-sm text-center">
-                <p>&copy; 2023 Bonnie Nails. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
+                <p>&copy; 2025 Bonnie Nails. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -676,12 +676,35 @@
         });
 
         // Booking form submission
-        document.getElementById('booking-form').addEventListener('submit', function(e) {
+                    document.getElementById('booking-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+
+            const name = document.getElementById('name').value.trim();
+            const service = document.getElementById('service').value.trim();
+            const date = document.getElementById('date').value.trim();
+            const time = document.getElementById('time').value.trim();
+
+            // Greeting based on current time
+            const hour = new Date().getHours();
+            let greeting = "Hey, good evening";
+            if (hour >= 0 && hour < 12) {
+                greeting = "Hey, good morning";
+            } else if (hour >= 12 && hour < 16) {
+                greeting = "Hey, good afternoon";
+            }
+
+            // Build the message
+            const message = `${greeting}, it’s ${encodeURIComponent(name)}. I was hoping you confirm my ${encodeURIComponent(service)} booking tomorrow at ${encodeURIComponent(time)}. Thank you!`;
+
+            // Replace with your WhatsApp number (international format, no +)
+            const whatsappNumber = "254797661210";
+
+            // WhatsApp URL
+            const waUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(waUrl, "_blank");
+
             this.reset();
         });
-
         // Gallery images (hardcoded, 6 images)
         const galleryImages = [
             {
