@@ -99,7 +99,7 @@
                         <a href="#about" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">About</a>
                         <a href="#services" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Services</a>
                         <a href="#booking" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Booking</a>
-                        <a href="#gallery" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Gallery</a>
+                        <a href="gallery.html" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Gallery</a>
                         <a href="#contact" class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Contact</a>
                         <a href="#booking" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition duration-300">Book Now</a>
                     </div>
@@ -120,7 +120,7 @@
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">About</a>
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Services</a>
                 <a href="#booking" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Booking</a>
-                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Gallery</a>
+                <a href="gallery.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Gallery</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Contact</a>
                 <a href="#booking" class="block w-full text-center bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition duration-300 mt-2">Book Now</a>
             </div>
@@ -371,34 +371,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 px-4 bg-white fade-in">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl text-amber-800 mb-4">Our Work</h2>
-                <p class="text-gray-600">Explore our gallery of exquisite nail designs and transformations.</p>
-                <div class="w-20 h-1 bg-amber-600 mx-auto mt-4"></div>
-            </div>
-            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- Gallery items will be dynamically inserted here -->
-            </div>
-        </div>
-        <!-- Lightbox (Updated with navigation) -->
-        <div id="lightbox" class="lightbox hidden">
-            <span class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">×</span>
-            <button class="lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous image">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full">
-            <button class="lightbox-next" onclick="navigateLightbox(1)" aria-label="Next image">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </button>
-        </div>
-    </section>
+
 
     <!-- Testimonials Section -->
     <section class="py-20 px-4 bg-neutral-50 fade-in">
@@ -748,7 +721,7 @@
                 galleryItem.innerHTML = `
                     <img src="${image.src}" alt="${image.alt}" class="w-full h-64 object-cover" loading="lazy">
                 `;
-                galleryItem.addEventListener('click', () => openLightbox(index));
+                galleryItem.addEventListener('click', () => window.location.href = 'gallery.html');
                 galleryGrid.appendChild(galleryItem);
             });
         }
