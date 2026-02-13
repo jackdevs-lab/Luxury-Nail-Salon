@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | TJ Nails | Timeless Elegance, Perfected</title>
+    <link rel="icon" type="image/png" href="images/nails-polish.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-100 text-gray-800">
+    <!-- Loading Animation -->
+    <div id="loader" class="fixed inset-0 bg-white z-50 flex justify-center items-center">
+        <div class="animate-pulse flex space-x-4">
+            <div class="w-12 h-12 bg-amber-200 rounded-full"></div>
+            <div class="w-12 h-12 bg-amber-300 rounded-full mt-4"></div>
+            <div class="w-12 h-12 bg-amber-400 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="images/logo__2_.png" alt="TJ Nails Logo" class="h-16 w-auto">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html#home"
+                            class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="index.html#about"
+                            class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="services.html"
+                            class="text-amber-700 px-3 py-2 text-sm font-medium border-b-2 border-amber-700">Services</a>
+                        <a href="index.html#booking"
+                            class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Booking</a>
+                        <a href="gallery.html"
+                            class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Gallery</a>
+                        <a href="index.html#contact"
+                            class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="index.html#booking"
+                            class="bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-neutral-800 transition duration-300">Book
+                            Now</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-amber-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="index.html#home"
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Home</a>
+                <a href="index.html#about"
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-amber-700">Services</a>
+                <a href="index.html#booking"
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Booking</a>
+                <a href="gallery.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Gallery</a>
+                <a href="index.html#contact"
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Contact</a>
+                <a href="index.html#booking"
+                    class="block w-full text-center bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-neutral-800 transition duration-300 mt-2">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-12 px-4 bg-neutral-50 border-b border-neutral-200">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="font-display text-4xl md:text-5xl text-amber-800 mb-4">Our Premium Services</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Discover our full range of indulgent nail treatments and beauty
+                enhancements. Each service is crafted with precision and luxury in mind.</p>
+            <div class="w-20 h-1 bg-amber-600 mx-auto mt-6"></div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 px-4 bg-white fade-in">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Gel Application -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Need.jpg" alt="Gel Application"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Gel Application</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">High-gloss, chip-resistant finish for a
+                            flawless look that lasts weeks.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedicure + Normal Polish -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/nail1.jpg" alt="Pedicure + Normal Polish"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Pedicure + Polish</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Relaxing therapeutic soak and meticulous
+                            nail care with premium polish.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1000/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedicure + Gel -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/pedicure+gel.webp" alt="Pedicure + Gel"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Pedicure + Gel</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">The ultimate luxury treatment for your
+                            feet with long-lasting gel finish.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Builder Gel -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Jungle green Nails.jpg" alt="Builder Gel"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Builder Gel</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Strengthen your natural nails with our
+                            premium builder gel system.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1000/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips + Gel -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/image6.jpeg" alt="Tips + Gel"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Tips + Gel</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Added length and beautiful gel color for a
+                            stunning silhouette.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acrylic Extensions -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Acrylics.jpeg" alt="Acrylics"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Acrylics</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Durable and customizable extensions for a
+                            bold, elegant statement.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">2500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gumgel Extensions -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Gumgel.jpeg" alt="Gumgel Extensions"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Gumgel Extensions</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Lightweight and flexible extensions for a
+                            natural look and feel.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">2000/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nail Art -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Art.jpeg" alt="Nail Art"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Nail Art</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Custom hand-painted designs to express
+                            your unique personality.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">From 50/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster Lashes -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/lushes.webp" alt="Cluster Lashes"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Cluster Lashes</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Enhance your eyes with voluminous,
+                            beautifully applied cluster lashes.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Price List Section -->
+    <section id="pricelist" class="py-20 px-4 bg-neutral-50 fade-in border-t border-neutral-200">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl text-amber-800 mb-4">Complete Price List</h2>
+                <p class="text-gray-600">Our transparent pricing for all services and enhancements.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-neutral-100 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-amber-50 rounded-full opacity-50 z-0"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-amber-50 rounded-full opacity-50 z-0"></div>
+
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Gel Application</span>
+                            <span class="font-display text-xl text-amber-800">500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Pedicure + Normal Polish</span>
+                            <span class="font-display text-xl text-amber-800">1000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Pedicure + Gel</span>
+                            <span class="font-display text-xl text-amber-800">1500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Builder Gel</span>
+                            <span class="font-display text-xl text-amber-800">1000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Tips + Gel</span>
+                            <span class="font-display text-xl text-amber-800">1500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Gumgel Extensions</span>
+                            <span class="font-display text-xl text-amber-800">2000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Gumgel</span>
+                            <span class="font-display text-xl text-amber-800">1500</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Tips + Gumgel</span>
+                            <span class="font-display text-xl text-amber-800">2500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Normal Polish</span>
+                            <span class="font-display text-xl text-amber-800">300</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Acrylics</span>
+                            <span class="font-display text-xl text-amber-800">2500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Eyebrow Shaping</span>
+                            <span class="font-display text-xl text-amber-800">100</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Cluster Lashes</span>
+                            <span class="font-display text-xl text-amber-800">1500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Ear Piercing</span>
+                            <span class="font-display text-xl text-amber-800">500</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-dashed border-gray-200 pb-2">
+                            <span class="font-medium text-gray-700">Makeup</span>
+                            <span class="font-display text-xl text-amber-800">1200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center relative z-10">
+                    <p
+                        class="inline-block bg-amber-50 text-amber-800 px-6 py-2 rounded-full text-sm font-medium border border-amber-100">
+                        * Art work and additional gems: 50/- per nail
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-300 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="font-display text-2xl text-white mb-4">TJ Nails</h3>
+                    <p class="mb-4">Where timeless elegance meets modern nail artistry. Experience the difference of
+                        true craftsmanship.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-lg text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="hover:text-white transition duration-200">Home</a></li>
+                        <li><a href="services.html" class="hover:text-white transition duration-200">Services</a></li>
+                        <li><a href="index.html#booking" class="hover:text-white transition duration-200">Book Now</a>
+                        </li>
+                        <li><a href="gallery.html" class="hover:text-white transition duration-200">Gallery</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition duration-200">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-lg text-white mb-4">Hours</h4>
+                    <ul class="space-y-2">
+                        <li>Monday - Friday: 9AM - 9PM</li>
+                        <li>Saturday: 10AM - 7PM</li>
+                        <li>Sunday: 10AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-700 mt-12 pt-8 text-sm text-center">
+                <p>&copy; <span id="current-year"></span> TJ Nails. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading animation
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(function () {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        }
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transition = 'opacity 1s ease';
+        });
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
