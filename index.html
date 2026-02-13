@@ -37,48 +37,20 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .gallery-item {
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .testimonial-carousel {
-            scroll-behavior: smooth;
+            transform: translateY(-10px);
         }
 
         .fade-in {
@@ -120,7 +92,7 @@
                             class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Home</a>
                         <a href="#about"
                             class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="#services"
+                        <a href="services.html"
                             class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Services</a>
                         <a href="#booking"
                             class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Booking</a>
@@ -129,7 +101,7 @@
                         <a href="#contact"
                             class="text-gray-700 hover:text-amber-700 px-3 py-2 text-sm font-medium">Contact</a>
                         <a href="#booking"
-                            class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition duration-300">Book
+                            class="bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-neutral-800 transition duration-300">Book
                             Now</a>
                     </div>
                 </div>
@@ -150,7 +122,7 @@
                     class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Home</a>
                 <a href="#about"
                     class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">About</a>
-                <a href="#services"
+                <a href="services.html"
                     class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Services</a>
                 <a href="#booking"
                     class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Booking</a>
@@ -159,7 +131,7 @@
                 <a href="#contact"
                     class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-700">Contact</a>
                 <a href="#booking"
-                    class="block w-full text-center bg-amber-700 text-black  px-6 py-2 rounded-full text-sm font-medium hover:bg-amber-800 transition duration-300 mt-2">Book
+                    class="block w-full text-center bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-neutral-800 transition duration-300 mt-2">Book
                     Now</a>
             </div>
         </div>
@@ -175,10 +147,10 @@
             <h1 class="font-display text-5xl md:text-7xl text-white mb-4">TJ Nails</h1>
             <p class="text-xl md:text-2xl text-amber-100 mb-8">Timeless Elegance, Perfected</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#booking"
-                    class="bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-8 rounded-full transition duration-300">Book
+                <a href="index.html#booking"
+                    class="bg-black hover:bg-neutral-800 text-white font-medium py-3 px-8 rounded-full transition duration-300">Book
                     Now</a>
-                <a href="#services"
+                <a href="services.html"
                     class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-medium py-3 px-8 rounded-full border border-white transition duration-300">View
                     Services</a>
             </div>
@@ -199,139 +171,85 @@
     <!-- About Section -->
 
 
-    <!-- Services Section -->
+    <!-- Featured Services Section -->
     <section id="services" class="py-20 px-4 bg-white fade-in">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl text-amber-800 mb-4">Our Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Indulge in our curated selection of premium nail treatments
-                    designed to nourish, beautify, and pamper.</p>
+                <h2 class="font-display text-3xl md:text-4xl text-amber-800 mb-4">Featured Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experience a touch of elegance with our most popular
+                    treatments.</p>
                 <div class="w-20 h-1 bg-amber-600 mx-auto mt-4"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="images/nail9 (1).jpg" alt="Classic Manicure" class="w-full h-full object-cover">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Gel Application -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Need.jpg" alt="Gel Application"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Classic Manicure</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Our signature manicure featuring nail shaping, cuticle care, hand
-                            massage, and polish application with our premium selection.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Gel Application</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">High-gloss, chip-resistant finish for a
+                            flawless look that lasts weeks.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="images/Need.jpg" alt="Gel Polish" class="w-full h-full object-cover">
+                <!-- Pedicure + Gel -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/pedicure+gel.webp" alt="Pedicure + Gel"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Gel Polish</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Long-lasting color with our gentle gel system that protects your
-                            natural nails while providing a flawless, chip-resistant finish.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Pedicure + Gel</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">The ultimate luxury treatment for your
+                            feet with long-lasting gel finish.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">1500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card 3 -->
-                <!-- <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1596704017256-dfb4c451a181?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Spa Treatment" class="w-full h-full object-cover">
+                <!-- Acrylic Extensions -->
+                <div class="service-card flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white group h-full">
+                    <div class="h-72 overflow-hidden">
+                        <img src="images/Acrylics.jpeg" alt="Acrylics"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Spa Treatment</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Ultimate relaxation with a nourishing soak, exfoliation, hydrating mask, and extended massage with luxury skincare products.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div> -->
-
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="images/nail8.jpg" alt="Acrylic Extensions" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Acrylic Extensions</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Custom-shaped extensions with our high-quality acrylic system that
-                            provides durability while maintaining a natural look.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
+                    <div class="p-6 glass-panel border-t border-white/20 flex-grow flex flex-col bg-white/70">
+                        <h3 class="font-display text-2xl text-amber-900 mb-2">Acrylics</h3>
+                        <p class="text-gray-600 text-sm mb-5 leading-relaxed">Durable and customizable extensions for a
+                            bold, elegant statement.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-amber-800 font-display text-2xl">2500/-</span>
+                            <a href="index.html#booking"
+                                class="bg-black hover:bg-neutral-800 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 transform group-hover:scale-105">Book
+                                Now</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="images/nail6.jpg" alt="Nail Art" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Nail Art</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Express your individuality with our artist's custom designs, from
-                            subtle accents to elaborate hand-painted creations.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="images/nail1.jpg" alt="Pedicure" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl text-gray-800 mb-2">Luxury Pedicure</h3>
-                        <p class="text-amber-700 font-medium mb-4"></p>
-                        <p class="text-gray-600 mb-4">Revitalize tired feet with our therapeutic soak, exfoliation,
-                            massage, and meticulous nail care for sandal-ready results.</p>
-                        <a href="#booking" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                            Book Now
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center mt-16">
+                <a href="services.html"
+                    class="inline-flex items-center text-amber-800 font-medium hover:text-amber-900 transition duration-300 group">
+                    View All Services
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -492,7 +410,7 @@
                 </div>
                 <div class="mt-8">
                     <button type="submit"
-                        class="w-full bg-black text-white font-medium py-3 px-6 rounded-full transition duration-300 hover:bg-gray-800">
+                        class="w-full bg-black text-white font-medium py-3 px-6 rounded-full transition duration-300 hover:bg-neutral-800">
                         WhatsApp Me for Booking
                     </button>
                 </div>
